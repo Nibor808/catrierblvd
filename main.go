@@ -19,7 +19,7 @@ func main() {
 	app.Get("/", func(c *fiber.Ctx) error {
 		return c.Render("index", fiber.Map{
 			"Title": "Saturday Night At The Movies",
-		})
+		}, "layouts/main")
 	})
 
 	err := app.Listen(":3000")
