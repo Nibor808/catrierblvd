@@ -1,6 +1,7 @@
 package main
 
 import (
+	"cartierblvd/views/maps"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html"
 	"log"
@@ -29,9 +30,7 @@ func main() {
 	})
 
 	app.Get("/", func(c *fiber.Ctx) error {
-		return c.Render("layouts/main", fiber.Map{
-			"Title": "Saturday Night At The Movies",
-		})
+		return c.Render("layouts/main", maps.GetMaps("MainMap"))
 	})
 
 	log.Fatal(app.Listen(":3000"))
