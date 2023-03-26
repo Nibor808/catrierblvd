@@ -8,6 +8,9 @@ import (
 )
 
 func main() {
+	// initialize text maps for layouts
+	maps.Init()
+
 	engine := html.New("./views", ".html")
 
 	config := fiber.Config{
