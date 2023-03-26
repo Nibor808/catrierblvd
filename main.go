@@ -2,28 +2,37 @@ package main
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/gofiber/template/amber"
+	"github.com/gofiber/template/html"
+	"log"
 )
 
 func main() {
-	engine := amber.New("./views", ".amber")
+	engine := html.New("./views", ".html")
+
 	config := fiber.Config{
 		AppName:            "CartierBlvd",
 		EnableIPValidation: true,
 		EnablePrintRoutes:  true,
+		UnescapePath:       true,
+		ViewsLayout:        "index",
 		Views:              engine,
 	}
 
 	app := fiber.New(config)
 
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.Render("index", fiber.Map{
-			"Title": "Saturday Night At The Movies",
-		}, "layouts/main")
+	// Static
+	app.Static("/", "./public")
+
+	// Middleware
+	app.Use(func(ctx *fiber.Ctx) error {
+		return ctx.Next()
 	})
 
-	err := app.Listen(":3000")
-	if err != nil {
-		return
-	}
+	app.Get("/", func(c *fiber.Ctx) error {
+		return c.Render("layouts/main", fiber.Map{
+			"Title": "Saturday Night At The Movies",
+		})
+	})
+
+	log.Fatal(app.Listen(":3000"))
 }
