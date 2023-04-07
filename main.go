@@ -1,15 +1,16 @@
 package main
 
 import (
-	"cartierblvd/views/maps"
+	"cartierblvd/views/textmaps"
+	"log"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html"
-	"log"
 )
 
 func main() {
 	// initialize text maps for layouts
-	maps.Init()
+	textmaps.Init()
 
 	engine := html.New("./views", ".html")
 
@@ -33,7 +34,7 @@ func main() {
 	})
 
 	app.Get("/", func(c *fiber.Ctx) error {
-		return c.Render("layouts/main", maps.GetMaps("MainMap"))
+		return c.Render("layouts/main", textmaps.GetMaps("MainMa"))
 	})
 
 	log.Fatal(app.Listen(":3000"))

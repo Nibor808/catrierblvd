@@ -1,0 +1,9 @@
+<div>
+  <p>{{if .MapError}}<span>Map not found {{.MapError}}</span>{{end}}</p>
+
+  <p>
+    {{if .KeyError}}<span
+      >Key {{.KeyError}} not found for Map {{.MapError}} </span
+    >{{end}}
+  </p>
+</div>

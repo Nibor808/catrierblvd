@@ -1,10 +1,8 @@
-{{template "partials/header" .}}
+{{template "partials/header" .}} {{ template "partials/errors" .}}
 
 <main>
-    <span>{{.Error}}</span>
-
-    <h1>{{.Title}}</h1>
-    <p>{{.MainTextIntro}}</p>
+  <h1>{{.Title}}</h1>
+  <p>{{.MainTextIntro}}</p>
 </main>
 
 {{template "partials/footer" .}}
