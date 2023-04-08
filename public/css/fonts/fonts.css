@@ -1,9 +1,14 @@
 @font-face {
     font-family: "ComfortaaReg";
-    src: url("Comfortaa/Comfortaa-Regular.ttf");
+    src: url("Comfortaa-Regular.ttf");
 }
 
 @font-face {
     font-family: "Ephesis";
-    src: url("./scripty/Ephesis-Regular.ttf")
+    src: url("Ephesis-Regular.ttf")
+}
+
+@font-face {
+    font-family: "Bungee";
+    src: url("BungeeShade-Regular.ttf")
 }
