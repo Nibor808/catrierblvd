@@ -19,6 +19,6 @@ var MainMap = fiber.Map{
 	"Date":       getMovieDate(),
 	"Intro":      "This weeks movie",
 	"MovieTitle": "The Conjuring",
-	"ShowInfo":   "Show time 8:30pm sharp",
+	"ShowInfo":   "Showtime 8:30pm sharp",
 	"EventInfo":  "BYO beverages and seating. Spots are first come first serve.",
 }

@@ -5,10 +5,15 @@
 
 @font-face {
     font-family: "Ephesis";
-    src: url("Ephesis-Regular.ttf")
+    src: url("Ephesis-Regular.ttf");
 }
 
 @font-face {
     font-family: "Bungee";
-    src: url("BungeeShade-Regular.ttf")
+    src: url("BungeeShade-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Shirk";
+    src: url("Shrikhand-Regular.ttf");
 }
