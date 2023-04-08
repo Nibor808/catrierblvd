@@ -1,8 +1,13 @@
-{{template "partials/header" .}} {{ template "partials/errors" .}}
+{{ template "partials/errors" .}}
+
+<header>{{template "partials/header" .}}</header>
 
 <main>
-  <h1>{{.Title}}</h1>
-  <p>{{.MainTextIntro}}</p>
+    <h2>{{.Title}}</h2>
+
+    <div class="sheet-wrapper">
+        <div class="sheet-container">{{template "partials/sheet" .}}</div>
+    </div>
 </main>
 
-{{template "partials/footer" .}}
+<footer>{{template "partials/footer" .}}</footer>
