@@ -34,7 +34,7 @@ func main() {
 	})
 
 	app.Get("/", func(c *fiber.Ctx) error {
-		return c.Render("layouts/main", textmaps.GetMap("MainMap"))
+		return c.Render("layouts/main", textmaps.GetMap(textmaps.Main))
 	})
 
 	log.Fatal(app.Listen(":3000"))
